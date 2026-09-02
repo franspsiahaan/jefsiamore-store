@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { SiteHeader } from "@/components/site-header";
-import { Stamp } from "@/components/graphics";
 import { StoreButton } from "@/components/store-buttons";
 import { Shot } from "@/components/shot";
 import { Reveal } from "@/components/reveal";
@@ -21,7 +20,7 @@ import {
 
 export const metadata: Metadata = {
   description:
-    "Landing page Jefsiamore. Set cangkir keramik lucu dicat tangan, belanja di Shopee dan Tokopedia, bisa juga borongan buat souvenir.",
+    "Landing page Jefsiamore. Set cangkir keramik lucu dicat tangan, belanja di Shopee dan TikTok Shop, bisa juga borongan buat souvenir.",
 };
 
 export default function Home() {
@@ -101,7 +100,7 @@ function Hero() {
 
           <div className="mt-7 flex flex-wrap gap-3">
             <StoreButton store="shopee" variant="lemon" />
-            <StoreButton store="tokopedia" variant="solid" />
+            <StoreButton store="tiktok" variant="solid" />
           </div>
 
           <p className="mt-4 text-sm text-ink-soft">
@@ -200,7 +199,7 @@ function Collection() {
             </h2>
           </div>
           <p className="max-w-xs text-sm text-ink-soft">
-            Harga dan stok tiap varian ada di Shopee dan Tokopedia. Warna bisa
+            Harga dan stok tiap varian ada di Shopee dan TikTok Shop. Warna bisa
             beda tipis karena semua dicat manual.
           </p>
         </div>
@@ -253,13 +252,13 @@ function Collection() {
                       Shopee
                     </a>
                     <a
-                      href={site.tokopediaUrl}
+                      href={site.tiktokUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label={`Beli ${p.name} di Tokopedia`}
+                      aria-label={`Beli ${p.name} di TikTok Shop`}
                       className="link-line text-[0.8rem] font-bold"
                     >
-                      Tokopedia
+                      TikTok
                     </a>
                   </span>
                 </div>
@@ -449,8 +448,8 @@ function Reviews() {
                     className={`h-1.5 w-1.5 rounded-full ${
                       r.via === "Shopee"
                         ? "bg-shopee"
-                        : r.via === "Tokopedia"
-                          ? "bg-tokopedia"
+                        : r.via === "TikTok Shop"
+                          ? "bg-tiktok"
                           : "bg-whatsapp"
                     }`}
                   />
@@ -479,12 +478,12 @@ function BuyOptions() {
       dark: false,
     },
     {
-      key: "tokopedia",
-      name: "Tokopedia",
-      dot: "bg-tokopedia",
-      fit: "Sama, buat beli satuan atau set kecil. Cocok kalau kamu pakai GoPay atau Tokopedia Plus.",
-      cta: "Buka toko Tokopedia",
-      href: site.tokopediaUrl,
+      key: "tiktok",
+      name: "TikTok Shop",
+      dot: "bg-tiktok",
+      fit: "Buat beli satuan atau set kecil sambil scroll. Sering ada promo dan gratis ongkir.",
+      cta: "Buka toko TikTok Shop",
+      href: site.tiktokUrl,
       dark: false,
     },
     {
@@ -507,8 +506,8 @@ function BuyOptions() {
             Tiga tempat, harga sama
           </h2>
           <p className="mt-3 text-sm text-ink/80">
-            Untuk eceran pilih Shopee atau Tokopedia. Untuk pesanan souvenir yang
-            banyak dan custom, langsung WhatsApp.
+            Untuk eceran pilih Shopee atau TikTok Shop. Untuk pesanan souvenir
+            yang banyak dan custom, langsung WhatsApp.
           </p>
         </div>
 
@@ -607,13 +606,20 @@ function SiteFooter() {
       <div className="wrap py-14 md:py-16">
         <div className="grid gap-10 md:grid-cols-12">
           <div className="md:col-span-5">
-            <div className="flex items-center gap-2 text-lemon">
-              <Stamp className="h-9 w-9" />
+            <div className="flex items-center gap-2.5 text-lemon">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={site.logo}
+                alt=""
+                width={36}
+                height={36}
+                className="h-9 w-9 rounded-full border-2 border-lemon object-cover"
+              />
               <span className="display text-2xl">{site.brand}</span>
             </div>
             <p className="mt-4 max-w-xs text-[0.9rem] text-cream/70">
               {site.tagline} Dibikin di {site.city}, dikirim ke seluruh
-              Indonesia. Eceran lewat Shopee dan Tokopedia, souvenir lewat
+              Indonesia. Eceran lewat Shopee dan TikTok Shop, souvenir lewat
               WhatsApp.
             </p>
             <p className="mt-4 text-[0.85rem] font-bold">
@@ -630,8 +636,8 @@ function SiteFooter() {
                 </a>
               </li>
               <li>
-                <a href={site.tokopediaUrl} target="_blank" rel="noopener noreferrer" className="link-line">
-                  Tokopedia
+                <a href={site.tiktokUrl} target="_blank" rel="noopener noreferrer" className="link-line">
+                  TikTok Shop
                 </a>
               </li>
               <li>

@@ -1,4 +1,3 @@
-import { Stamp } from "@/components/graphics";
 import { StoreButton } from "@/components/store-buttons";
 import { site } from "@/lib/site";
 
@@ -13,8 +12,15 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b-2 border-ink bg-lemon">
       <div className="wrap flex h-16 items-center justify-between gap-4">
-        <a href="#top" className="flex items-center gap-2 text-ink">
-          <Stamp className="h-8 w-8" />
+        <a href="#top" className="flex items-center gap-2.5 text-ink">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={site.logo}
+            alt=""
+            width={34}
+            height={34}
+            className="h-[34px] w-[34px] rounded-full border-2 border-ink object-cover"
+          />
           <span className="display text-xl">{site.brand}</span>
         </a>
 
@@ -30,8 +36,8 @@ export function SiteHeader() {
           <StoreButton store="shopee" variant="outline" className="px-3.5 py-2">
             Shopee
           </StoreButton>
-          <StoreButton store="tokopedia" variant="solid" className="px-3.5 py-2">
-            Tokopedia
+          <StoreButton store="tiktok" variant="solid" className="px-3.5 py-2">
+            TikTok Shop
           </StoreButton>
         </div>
 

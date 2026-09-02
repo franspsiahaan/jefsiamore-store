@@ -57,7 +57,7 @@ export function StickyBuyBar() {
           <p className="text-[0.82rem] font-bold leading-tight">
             Cangkir set Jefsiamore
             <span className="block text-[0.72rem] font-medium text-ink/70">
-              Ready di Shopee &amp; Tokopedia
+              Ready di Shopee &amp; TikTok Shop
             </span>
           </p>
           <div className="flex shrink-0 items-center gap-2">
@@ -71,13 +71,13 @@ export function StickyBuyBar() {
               Shopee
             </a>
             <a
-              href={site.tokopediaUrl}
+              href={site.tiktokUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="card-hard flex items-center gap-1.5 bg-ink px-3.5 py-2 text-[0.8rem] font-bold text-cream"
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-tokopedia" />
-              Tokopedia
+              <span className="h-1.5 w-1.5 rounded-full bg-tiktok" />
+              TikTok Shop
             </a>
           </div>
         </div>

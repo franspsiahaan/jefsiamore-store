@@ -16,19 +16,21 @@ export const site = {
   tagline: "Cangkir keramik lucu, dicat tangan.",
   city: "Bandung",
 
-  // --- GANTI ---
-  shopeeUrl: "https://shopee.co.id/jefsiamore",
-  tokopediaUrl: "https://www.tokopedia.com/jefsiamore",
+  // --- GANTI KALAU BERUBAH ---
+  shopeeUrl: "https://s.shopee.co.id/3B6wBxeBsu",
+  tiktokUrl: "https://vt.tiktok.com/ZSVoNE8Kc/?page=Mall",
   instagramUrl: "https://instagram.com/jefsiamore.store",
   waNumber: "6281296643788", // untuk link wa.me
   waDisplay: "0812-9664-3788", // yang tampil di layar
-  // -------------
+  logo: "/logo.png", // ganti dengan file logo asli kalau ada yang lebih bagus
+  // ---------------------------
 
   stats: {
     rating: "4,9",
     sold: "ribuan",
     souvenirOrders: "500+",
   },
+  marketplaces: ["Shopee", "TikTok Shop"] as const,
 } as const;
 
 export const waUrl = (msg: string) =>
@@ -206,7 +208,7 @@ export const marquee: string[] = [
   "Aman buat minuman panas",
   "Bisa buat souvenir & hampers",
   "Dikirim aman, ganti kalau pecah",
-  "Ready di Shopee & Tokopedia",
+  "Ready di Shopee & TikTok Shop",
 ];
 
 export const reasons: { n: string; title: string; body: string }[] = [
@@ -249,7 +251,7 @@ export const reviews: {
   quote: string;
   name: string;
   place: string;
-  via: "Shopee" | "Tokopedia" | "WhatsApp";
+  via: "Shopee" | "TikTok Shop" | "WhatsApp";
 }[] = [
   {
     quote:
@@ -270,14 +272,14 @@ export const reviews: {
       "Packingnya niat, bubble wrap tebal dan dus keras. Dikasih ke mama pas ulang tahun, langsung dipajang.",
     name: "Yoga",
     place: "Semarang",
-    via: "Tokopedia",
+    via: "TikTok Shop",
   },
 ];
 
 export const faqs: { q: string; a: string }[] = [
   {
     q: "Satu set isinya apa saja?",
-    a: "Rata-rata 3 cangkir dan 3 lepek. Beberapa varian seperti Papa Mama dijual sepasang. Isi tiap set ditulis lengkap di deskripsi produk di Shopee dan Tokopedia.",
+    a: "Rata-rata 3 cangkir dan 3 lepek. Beberapa varian seperti Papa Mama dijual sepasang. Isi tiap set ditulis lengkap di deskripsi produk di Shopee dan TikTok Shop.",
   },
   {
     q: "Bisa pesan banyak untuk souvenir atau hampers?",
@@ -296,7 +298,7 @@ export const faqs: { q: string; a: string }[] = [
     a: "Kami ganti. Kirim video buka paket tanpa jeda beserta foto ke chat toko, klaim kami proses dalam 1x24 jam.",
   },
   {
-    q: "Beli di Shopee, Tokopedia, atau WhatsApp?",
-    a: "Untuk beli satuan atau beberapa set, paling praktis lewat Shopee atau Tokopedia. Untuk souvenir jumlah banyak dan yang custom, langsung WhatsApp saja.",
+    q: "Beli di Shopee, TikTok Shop, atau WhatsApp?",
+    a: "Untuk beli satuan atau beberapa set, pilih Shopee atau TikTok Shop. Untuk souvenir jumlah banyak dan yang custom, langsung WhatsApp saja.",
   },
 ];

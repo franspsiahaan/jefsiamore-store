@@ -1,7 +1,7 @@
 # Jefsiamore — Landing Page
 
 Landing page toko **Jefsiamore** (jefsiamore.store): set cangkir + lepek keramik lucu
-dicat tangan. Fokus jualan eceran di **Shopee** & **Tokopedia**, plus jalur
+dicat tangan. Fokus jualan eceran di **Shopee** & **TikTok Shop**, plus jalur
 **WhatsApp** untuk souvenir/hampers borongan.
 
 Next.js 16 (App Router), TypeScript, Tailwind CSS v4.
@@ -18,8 +18,11 @@ lama nyangkut: `taskkill //PID <pid> //F` dulu.
 
 ## 1. Link toko & WhatsApp
 
-`src/lib/site.ts` bagian atas — ganti `shopeeUrl`, `tokopediaUrl`, `instagramUrl`,
+`src/lib/site.ts` bagian atas — ganti `shopeeUrl`, `tiktokUrl`, `instagramUrl`,
 `waNumber` (format 62..., untuk link wa.me) dan `waDisplay` (yang tampil).
+
+Logo: `public/logo.png` (sekarang hasil crop dari flyer, agak buram). Kalau punya
+file logo asli, timpa `public/logo.png` dengan nama yang sama, tanpa ubah kode.
 
 ## 2. Foto
 
@@ -44,3 +47,4 @@ FAQ · footer. Sticky buy bar muncul saat scroll.
 - Warna: kuning `#F7CE1E`, hitam `#17150F`, kertas `#FBF6E9`, aksen tomat `#E0512B`.
 - Font: **Anton** (judul, huruf kapital tebal) + **Archivo** (teks).
 - Gaya kartu bergaris tebal + bayangan solid ("card-hard") ikut vibe flyer brand.
+- Jalur beli: Shopee + TikTok Shop (eceran), WhatsApp (souvenir/borongan).

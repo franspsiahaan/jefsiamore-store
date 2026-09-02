@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: `%s | ${site.brand}`,
   },
   description:
-    "Set cangkir dan lepek keramik lucu, dicat tangan. Enak buat ngopi tiap hari, cakep juga buat souvenir pernikahan, hampers, dan kado. Belanja di Shopee dan Tokopedia.",
+    "Set cangkir dan lepek keramik lucu, dicat tangan. Enak buat ngopi tiap hari, cakep juga buat souvenir pernikahan, hampers, dan kado. Belanja di Shopee dan TikTok Shop.",
   keywords: [
     "cangkir cantik",
     "mug keramik lucu",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     locale: "id_ID",
     title: `${site.brand}, cangkir keramik cantik`,
     description:
-      "Set cangkir dan lepek keramik lucu dicat tangan. Belanja di Shopee dan Tokopedia, bisa juga borongan buat souvenir.",
+      "Set cangkir dan lepek keramik lucu dicat tangan. Belanja di Shopee dan TikTok Shop, bisa juga borongan buat souvenir.",
     siteName: site.brand,
   },
   twitter: { card: "summary_large_image" },
