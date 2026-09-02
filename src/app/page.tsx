@@ -99,8 +99,15 @@ function Hero() {
           </p>
 
           <div className="mt-7 flex flex-wrap gap-3">
-            <StoreButton store="shopee" variant="lemon" />
-            <StoreButton store="tiktok" variant="solid" />
+            <StoreButton store="shopee" variant="lemon">
+              Beli di Shopee
+            </StoreButton>
+            <StoreButton store="tiktok" variant="solid">
+              Beli di TikTok Shop
+            </StoreButton>
+            <StoreButton store="lazada" variant="outline">
+              Beli di Lazada
+            </StoreButton>
           </div>
 
           <p className="mt-4 text-sm text-ink-soft">
@@ -180,7 +187,7 @@ function Marquee() {
 
 function PriceCta({ price }: { price: string }) {
   return (
-    <span className="text-sm font-bold">
+    <span className="block text-sm font-bold">
       {price ? price : <span className="text-ink-soft">Cek harga di toko</span>}
     </span>
   );
@@ -239,15 +246,16 @@ function Collection() {
                   1 set: {p.set}
                 </p>
 
-                <div className="mt-3 flex items-center justify-between border-t-2 border-ink pt-3">
+                <div className="mt-3 border-t-2 border-ink pt-3">
                   <PriceCta price={p.price} />
-                  <span className="flex items-center gap-2">
+                  <span className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-[0.8rem] font-bold">
+                    <span className="text-ink-soft">Beli:</span>
                     <a
                       href={site.shopeeUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`Beli ${p.name} di Shopee`}
-                      className="link-line text-[0.8rem] font-bold"
+                      className="link-line"
                     >
                       Shopee
                     </a>
@@ -256,9 +264,18 @@ function Collection() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`Beli ${p.name} di TikTok Shop`}
-                      className="link-line text-[0.8rem] font-bold"
+                      className="link-line"
                     >
                       TikTok
+                    </a>
+                    <a
+                      href={site.lazadaUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Beli ${p.name} di Lazada`}
+                      className="link-line"
+                    >
+                      Lazada
                     </a>
                   </span>
                 </div>
@@ -487,6 +504,15 @@ function BuyOptions() {
       dark: false,
     },
     {
+      key: "lazada",
+      name: "Lazada",
+      dot: "bg-lazada",
+      fit: "Pilihan lain buat eceran. Cocok kalau kamu langganan LazPayLater atau kumpulin koin.",
+      cta: "Buka toko Lazada",
+      href: site.lazadaUrl,
+      dark: false,
+    },
+    {
       key: "whatsapp",
       name: "WhatsApp",
       dot: "bg-whatsapp",
@@ -503,15 +529,15 @@ function BuyOptions() {
         <div className="max-w-2xl">
           <span className="eyebrow">Cara beli</span>
           <h2 className="display mt-3 text-[clamp(2rem,5.5vw,3.2rem)]">
-            Tiga tempat, harga sama
+            Empat tempat, harga sama
           </h2>
           <p className="mt-3 text-sm text-ink/80">
-            Untuk eceran pilih Shopee atau TikTok Shop. Untuk pesanan souvenir
-            yang banyak dan custom, langsung WhatsApp.
+            Untuk eceran pilih Shopee, TikTok Shop, atau Lazada. Untuk pesanan
+            souvenir yang banyak dan custom, langsung WhatsApp.
           </p>
         </div>
 
-        <div className="mt-10 grid gap-5 md:grid-cols-3">
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {cards.map((c) => (
             <div
               key={c.key}
@@ -619,8 +645,8 @@ function SiteFooter() {
             </div>
             <p className="mt-4 max-w-xs text-[0.9rem] text-cream/70">
               {site.tagline} Dibikin di {site.city}, dikirim ke seluruh
-              Indonesia. Eceran lewat Shopee dan TikTok Shop, souvenir lewat
-              WhatsApp.
+              Indonesia. Eceran lewat Shopee, TikTok Shop, dan Lazada, souvenir
+              lewat WhatsApp.
             </p>
             <p className="mt-4 text-[0.85rem] font-bold">
               WhatsApp {site.waDisplay}
@@ -638,6 +664,11 @@ function SiteFooter() {
               <li>
                 <a href={site.tiktokUrl} target="_blank" rel="noopener noreferrer" className="link-line">
                   TikTok Shop
+                </a>
+              </li>
+              <li>
+                <a href={site.lazadaUrl} target="_blank" rel="noopener noreferrer" className="link-line">
+                  Lazada
                 </a>
               </li>
               <li>

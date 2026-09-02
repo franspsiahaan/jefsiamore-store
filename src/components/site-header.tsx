@@ -24,7 +24,7 @@ export function SiteHeader() {
           <span className="display text-xl">{site.brand}</span>
         </a>
 
-        <nav className="hidden items-center gap-7 text-[0.8rem] font-bold uppercase tracking-wide md:flex">
+        <nav className="hidden items-center gap-6 text-[0.8rem] font-bold uppercase tracking-wide md:flex">
           {nav.map((item) => (
             <a key={item.href} href={item.href} className="link-line">
               {item.label}
@@ -32,18 +32,21 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-2 sm:flex">
-          <StoreButton store="shopee" variant="outline" className="px-3.5 py-2">
+        <div className="hidden items-center gap-2 lg:flex">
+          <StoreButton store="shopee" variant="outline" className="px-3 py-2 text-[0.8rem]">
             Shopee
           </StoreButton>
-          <StoreButton store="tiktok" variant="solid" className="px-3.5 py-2">
-            TikTok Shop
+          <StoreButton store="tiktok" variant="outline" className="px-3 py-2 text-[0.8rem]">
+            TikTok
+          </StoreButton>
+          <StoreButton store="lazada" variant="solid" className="px-3 py-2 text-[0.8rem]">
+            Lazada
           </StoreButton>
         </div>
 
         <a
           href="#beli"
-          className="card-hard bg-cream px-3.5 py-2 text-sm font-bold sm:hidden"
+          className="card-hard bg-cream px-3.5 py-2 text-sm font-bold lg:hidden"
         >
           Cara beli
         </a>

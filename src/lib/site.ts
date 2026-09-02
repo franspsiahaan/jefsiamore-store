@@ -14,11 +14,12 @@ export const site = {
   brand: "Jefsiamore",
   domain: "jefsiamore.store",
   tagline: "Cangkir keramik lucu, dicat tangan.",
-  city: "Bandung",
+  city: "Tangerang",
 
   // --- GANTI KALAU BERUBAH ---
   shopeeUrl: "https://s.shopee.co.id/3B6wBxeBsu",
   tiktokUrl: "https://vt.tiktok.com/ZSVoNE8Kc/?page=Mall",
+  lazadaUrl: "https://s.lazada.co.id/s.ZJ4LME",
   instagramUrl: "https://instagram.com/jefsiamore.store",
   waNumber: "6281296643788", // untuk link wa.me
   waDisplay: "0812-9664-3788", // yang tampil di layar
@@ -30,7 +31,7 @@ export const site = {
     sold: "ribuan",
     souvenirOrders: "500+",
   },
-  marketplaces: ["Shopee", "TikTok Shop"] as const,
+  marketplaces: ["Shopee", "TikTok Shop", "Lazada"] as const,
 } as const;
 
 export const waUrl = (msg: string) =>
@@ -208,7 +209,7 @@ export const marquee: string[] = [
   "Aman buat minuman panas",
   "Bisa buat souvenir & hampers",
   "Dikirim aman, ganti kalau pecah",
-  "Ready di Shopee & TikTok Shop",
+  "Ready di Shopee, TikTok Shop & Lazada",
 ];
 
 export const reasons: { n: string; title: string; body: string }[] = [
@@ -257,7 +258,7 @@ export const reviews: {
     quote:
       "Pesan 150 set buat souvenir nikahan, semua sampai utuh. Banyak tamu yang japri nanya belinya di mana.",
     name: "Dinda",
-    place: "Bandung",
+    place: "Tangerang",
     via: "WhatsApp",
   },
   {
@@ -279,7 +280,7 @@ export const reviews: {
 export const faqs: { q: string; a: string }[] = [
   {
     q: "Satu set isinya apa saja?",
-    a: "Rata-rata 3 cangkir dan 3 lepek. Beberapa varian seperti Papa Mama dijual sepasang. Isi tiap set ditulis lengkap di deskripsi produk di Shopee dan TikTok Shop.",
+    a: "Rata-rata 3 cangkir dan 3 lepek. Beberapa varian seperti Papa Mama dijual sepasang. Isi tiap set ditulis lengkap di deskripsi produk di tiap marketplace.",
   },
   {
     q: "Bisa pesan banyak untuk souvenir atau hampers?",
@@ -298,7 +299,7 @@ export const faqs: { q: string; a: string }[] = [
     a: "Kami ganti. Kirim video buka paket tanpa jeda beserta foto ke chat toko, klaim kami proses dalam 1x24 jam.",
   },
   {
-    q: "Beli di Shopee, TikTok Shop, atau WhatsApp?",
-    a: "Untuk beli satuan atau beberapa set, pilih Shopee atau TikTok Shop. Untuk souvenir jumlah banyak dan yang custom, langsung WhatsApp saja.",
+    q: "Beli di Shopee, TikTok Shop, Lazada, atau WhatsApp?",
+    a: "Untuk beli satuan atau beberapa set, pilih Shopee, TikTok Shop, atau Lazada. Harga dan stok sama. Untuk souvenir jumlah banyak dan yang custom, langsung WhatsApp saja.",
   },
 ];

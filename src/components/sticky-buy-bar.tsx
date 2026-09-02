@@ -53,19 +53,19 @@ export function StickyBuyBar() {
       }`}
     >
       <div className="wrap pb-3">
-        <div className="card-hard flex items-center justify-between gap-3 bg-lemon px-4 py-2.5 sm:px-5">
-          <p className="text-[0.82rem] font-bold leading-tight">
+        <div className="card-hard flex items-center justify-between gap-3 bg-lemon px-3 py-2.5 sm:px-5">
+          <p className="hidden text-[0.82rem] font-bold leading-tight min-[440px]:block">
             Cangkir set Jefsiamore
             <span className="block text-[0.72rem] font-medium text-ink/70">
-              Ready di Shopee &amp; TikTok Shop
+              Harga sama di semua toko
             </span>
           </p>
-          <div className="flex shrink-0 items-center gap-2">
+          <div className="flex shrink-0 items-center gap-1.5">
             <a
               href={site.shopeeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="card-hard flex items-center gap-1.5 bg-cream px-3.5 py-2 text-[0.8rem] font-bold"
+              className="card-hard flex items-center gap-1.5 bg-cream px-2.5 py-2 text-[0.74rem] font-bold"
             >
               <span className="h-1.5 w-1.5 rounded-full bg-shopee" />
               Shopee
@@ -74,10 +74,19 @@ export function StickyBuyBar() {
               href={site.tiktokUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="card-hard flex items-center gap-1.5 bg-ink px-3.5 py-2 text-[0.8rem] font-bold text-cream"
+              className="card-hard flex items-center gap-1.5 bg-cream px-2.5 py-2 text-[0.74rem] font-bold"
             >
               <span className="h-1.5 w-1.5 rounded-full bg-tiktok" />
-              TikTok Shop
+              TikTok
+            </a>
+            <a
+              href={site.lazadaUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="card-hard flex items-center gap-1.5 bg-cream px-2.5 py-2 text-[0.74rem] font-bold"
+            >
+              <span className="h-1.5 w-1.5 rounded-full bg-lazada" />
+              Lazada
             </a>
           </div>
         </div>

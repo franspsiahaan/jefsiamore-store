@@ -1,24 +1,27 @@
 import type { ReactNode } from "react";
 import { site, waShop } from "@/lib/site";
 
-type Store = "shopee" | "tiktok" | "whatsapp";
+type Store = "shopee" | "tiktok" | "lazada" | "whatsapp";
 type Variant = "solid" | "outline" | "lemon";
 
 const dot: Record<Store, string> = {
   shopee: "bg-shopee",
   tiktok: "bg-tiktok",
+  lazada: "bg-lazada",
   whatsapp: "bg-whatsapp",
 };
 
 const label: Record<Store, string> = {
   shopee: "Shopee",
   tiktok: "TikTok Shop",
+  lazada: "Lazada",
   whatsapp: "WhatsApp",
 };
 
 function hrefFor(store: Store) {
   if (store === "shopee") return site.shopeeUrl;
   if (store === "tiktok") return site.tiktokUrl;
+  if (store === "lazada") return site.lazadaUrl;
   return waShop;
 }
 
