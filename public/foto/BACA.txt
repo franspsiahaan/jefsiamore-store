@@ -1,0 +1,34 @@
+Taruh foto di folder ini (format .jpg, kualitas bagus).
+
+FOTO PRODUK  (rasio kira-kira 1:1 / persegi, tampak jelas cangkirnya)
+  kelapa.jpg
+  nanas.jpg
+  apel.jpg
+  pisang.jpg
+  anggur.jpg
+  fruity.jpg
+  kol.jpg
+  bunga-pink.jpg
+  rumah-gadang.jpg
+  papa-mama.jpg
+  coffee-te.jpg
+  emot.jpg
+
+FOTO BESAR
+  hero.jpg      - 1 set cangkir paling menarik, latar terang (rasio 4:5 / potret)
+  souvenir.jpg  - hampers / gift box yang ditata (rasio 4:5 / potret)
+  proses.jpg    - tangan mengecat atau menata cangkir (rasio 4:3 / landscape)
+
+SETELAH FOTO ADA
+  Buka src/lib/site.ts, isi path-nya:
+    images.hero = "/foto/hero.jpg"
+    images.souvenir = "/foto/souvenir.jpg"
+    images.process = "/foto/proses.jpg"
+  dan tiap produk:
+    photo: "/foto/kelapa.jpg"
+
+  Selama masih "" halaman menampilkan kotak placeholder berlabel nama file,
+  jadi layout tetap rapi walau foto belum lengkap.
+
+Kalau nama varian di daftar tidak sesuai stok kamu, ganti saja di array
+`products` di src/lib/site.ts (slug, name, tag, desc, set, price).

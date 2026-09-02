@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: var(--ff-display), "Arial Narrow", "Archivo Narrow", sans-serif;
+  --font-body: var(--ff-body), ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, sans-serif;
+
+  --color-lemon: #f7ce1e;
+  --color-lemon-deep: #e0b400;
+  --color-ink: #17150f;
+  --color-ink-soft: #5f5a4e;
+  --color-paper: #fbf6e9;
+  --color-cream: #fffdf5;
+  --color-tomato: #e0512b;
+  --color-line: #e7dfc6;
+
+  --color-shopee: #ee4d2d;
+  --color-tokopedia: #03ac0e;
+  --color-whatsapp: #1faf52;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-ink);
+  color: var(--color-lemon);
+}
+
+html {
+  scrollbar-color: var(--color-ink) var(--color-paper);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+@layer components {
+  .wrap {
+    width: 100%;
+    max-width: 78rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+
+  .display {
+    font-family: var(--font-display);
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 0.94;
+    letter-spacing: 0.005em;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  /* Garis tebal ala stiker */
+  .card-hard {
+    border: 2px solid var(--color-ink);
+    box-shadow: 6px 6px 0 var(--color-ink);
+  }
+
+  .link-line {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 100% 2px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.2s ease;
+  }
+  .link-line:hover {
+    background-size: 0% 2px;
+    background-position: 100% 100%;
+  }
+}
+
+/* Marquee */
+@keyframes drift {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: drift 30s linear infinite;
+}
+
+/* Uap pada sketsa cangkir */
+@keyframes rise {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  25% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-18px);
+  }
+}
+.steam {
+  animation: rise 3.6s ease-in-out infinite;
+}
+.steam-2 {
+  animation-delay: 1.2s;
+}
+.steam-3 {
+  animation-delay: 2.4s;
+}
+
+/* Ken burns pelan */
+@keyframes kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+.kenburns {
+  animation: kenburns 20s ease-in-out infinite alternate;
+}
+
+/* Reveal saat scroll. Tanpa JS konten tampil apa adanya. */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(1rem);
+  transition:
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.js .reveal[data-shown="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .js .reveal,
+  .js .reveal[data-shown="false"] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .kenburns,
+  .marquee-track,
+  .steam {
+    animation: none;
+  }
+}
