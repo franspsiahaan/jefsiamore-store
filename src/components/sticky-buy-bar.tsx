@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { BrandMark } from "@/components/brand-mark";
 import { site } from "@/lib/site";
 
 /**
@@ -67,7 +68,7 @@ export function StickyBuyBar() {
               rel="noopener noreferrer"
               className="card-hard flex items-center gap-1.5 bg-cream px-2.5 py-2 text-[0.74rem] font-bold"
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-shopee" />
+              <BrandMark brand="shopee" className="h-4 w-4 shrink-0" />
               Shopee
             </a>
             <a
@@ -76,7 +77,7 @@ export function StickyBuyBar() {
               rel="noopener noreferrer"
               className="card-hard flex items-center gap-1.5 bg-cream px-2.5 py-2 text-[0.74rem] font-bold"
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-tiktok" />
+              <BrandMark brand="tiktok" className="h-4 w-4 shrink-0" />
               TikTok
             </a>
             <a
@@ -85,7 +86,7 @@ export function StickyBuyBar() {
               rel="noopener noreferrer"
               className="card-hard flex items-center gap-1.5 bg-cream px-2.5 py-2 text-[0.74rem] font-bold"
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-lazada" />
+              <BrandMark brand="lazada" className="h-4 w-4 shrink-0" />
               Lazada
             </a>
           </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SiteHeader } from "@/components/site-header";
 import { StoreButton } from "@/components/store-buttons";
+import { BrandMark, type Brand } from "@/components/brand-mark";
 import { Shot } from "@/components/shot";
 import { Reveal } from "@/components/reveal";
 import { StickyBuyBar } from "@/components/sticky-buy-bar";
@@ -248,15 +249,16 @@ function Collection() {
 
                 <div className="mt-3 border-t-2 border-ink pt-3">
                   <PriceCta price={p.price} />
-                  <span className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-[0.8rem] font-bold">
+                  <span className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[0.8rem] font-bold">
                     <span className="text-ink-soft">Beli:</span>
                     <a
                       href={site.shopeeUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`Beli ${p.name} di Shopee`}
-                      className="link-line"
+                      className="inline-flex items-center gap-1 link-line"
                     >
+                      <BrandMark brand="shopee" className="h-4 w-4 shrink-0" />
                       Shopee
                     </a>
                     <a
@@ -264,8 +266,9 @@ function Collection() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`Beli ${p.name} di TikTok Shop`}
-                      className="link-line"
+                      className="inline-flex items-center gap-1 link-line"
                     >
+                      <BrandMark brand="tiktok" className="h-4 w-4 shrink-0" />
                       TikTok
                     </a>
                     <a
@@ -273,8 +276,9 @@ function Collection() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`Beli ${p.name} di Lazada`}
-                      className="link-line"
+                      className="inline-flex items-center gap-1 link-line"
                     >
+                      <BrandMark brand="lazada" className="h-4 w-4 shrink-0" />
                       Lazada
                     </a>
                   </span>
@@ -401,7 +405,7 @@ function Souvenir() {
               rel="noopener noreferrer"
               className="card-hard mt-7 inline-flex items-center gap-2.5 bg-ink px-6 py-3.5 text-sm font-bold text-cream transition-colors hover:bg-ink/90"
             >
-              <span className="h-2.5 w-2.5 rounded-full bg-whatsapp" />
+              <BrandMark brand="whatsapp" className="h-5 w-5 shrink-0" />
               Konsultasi souvenir di WhatsApp
               <span aria-hidden="true">→</span>
             </a>
@@ -461,14 +465,15 @@ function Reviews() {
                   {r.name}, {r.place}
                 </span>
                 <span className="mt-1 flex items-center gap-1.5 text-ink-soft">
-                  <span
-                    className={`h-1.5 w-1.5 rounded-full ${
+                  <BrandMark
+                    brand={
                       r.via === "Shopee"
-                        ? "bg-shopee"
+                        ? "shopee"
                         : r.via === "TikTok Shop"
-                          ? "bg-tiktok"
-                          : "bg-whatsapp"
-                    }`}
+                          ? "tiktok"
+                          : "whatsapp"
+                    }
+                    className="h-3.5 w-3.5 shrink-0"
                   />
                   via {r.via}
                 </span>
@@ -488,7 +493,6 @@ function BuyOptions() {
     {
       key: "shopee",
       name: "Shopee",
-      dot: "bg-shopee",
       fit: "Buat beli 1 sampai beberapa set. Enak kalau kamu rajin pakai voucher gratis ongkir.",
       cta: "Buka toko Shopee",
       href: site.shopeeUrl,
@@ -497,7 +501,6 @@ function BuyOptions() {
     {
       key: "tiktok",
       name: "TikTok Shop",
-      dot: "bg-tiktok",
       fit: "Buat beli satuan atau set kecil sambil scroll. Sering ada promo dan gratis ongkir.",
       cta: "Buka toko TikTok Shop",
       href: site.tiktokUrl,
@@ -506,7 +509,6 @@ function BuyOptions() {
     {
       key: "lazada",
       name: "Lazada",
-      dot: "bg-lazada",
       fit: "Pilihan lain buat eceran. Cocok kalau kamu langganan LazPayLater atau kumpulin koin.",
       cta: "Buka toko Lazada",
       href: site.lazadaUrl,
@@ -515,7 +517,6 @@ function BuyOptions() {
     {
       key: "whatsapp",
       name: "WhatsApp",
-      dot: "bg-whatsapp",
       fit: "Buat souvenir dan hampers jumlah banyak, custom kartu ucapan, atau tanya stok. Mulai lusinan.",
       cta: `Chat ${site.waDisplay}`,
       href: waShop,
@@ -546,7 +547,7 @@ function BuyOptions() {
               }`}
             >
               <div className="flex items-center gap-2.5">
-                <span className={`h-3 w-3 rounded-full ${c.dot}`} />
+                <BrandMark brand={c.key as Brand} className="h-5 w-5 shrink-0" />
                 <h3 className="text-xl font-bold">{c.name}</h3>
               </div>
               <p

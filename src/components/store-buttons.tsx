@@ -1,15 +1,9 @@
 import type { ReactNode } from "react";
+import { BrandMark } from "@/components/brand-mark";
 import { site, waShop } from "@/lib/site";
 
 type Store = "shopee" | "tiktok" | "lazada" | "whatsapp";
 type Variant = "solid" | "outline" | "lemon";
-
-const dot: Record<Store, string> = {
-  shopee: "bg-shopee",
-  tiktok: "bg-tiktok",
-  lazada: "bg-lazada",
-  whatsapp: "bg-whatsapp",
-};
 
 const label: Record<Store, string> = {
   shopee: "Shopee",
@@ -47,9 +41,9 @@ export function StoreButton({
       href={hrefFor(store)}
       target="_blank"
       rel="noopener noreferrer"
-      className={`card-hard group inline-flex items-center justify-center gap-2.5 px-5 py-3 text-sm font-bold transition-colors ${styles[variant]} ${className}`}
+      className={`card-hard group inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-bold transition-colors ${styles[variant]} ${className}`}
     >
-      <span className={`h-2.5 w-2.5 rounded-full ${dot[store]}`} aria-hidden="true" />
+      <BrandMark brand={store} className="h-[18px] w-[18px] shrink-0" />
       {children ?? `Belanja di ${label[store]}`}
       <span
         aria-hidden="true"
