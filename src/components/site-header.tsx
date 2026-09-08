@@ -12,16 +12,15 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b-2 border-ink bg-lemon">
       <div className="wrap flex h-16 items-center justify-between gap-4">
-        <a href="#top" className="flex items-center gap-2.5 text-ink">
+        <a href="#top" aria-label={site.brand} className="flex items-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={site.logo}
-            alt=""
-            width={34}
-            height={34}
-            className="h-[34px] w-[34px] rounded-full border-2 border-ink object-cover"
+            alt={site.brand}
+            width={132}
+            height={72}
+            className="h-10 w-auto rounded-xl bg-ink px-2.5 py-1.5"
           />
-          <span className="display text-xl">{site.brand}</span>
         </a>
 
         <nav className="hidden items-center gap-6 text-[0.8rem] font-bold uppercase tracking-wide md:flex">

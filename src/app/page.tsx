@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { SiteHeader } from "@/components/site-header";
 import { StoreButton } from "@/components/store-buttons";
 import { BrandMark, type Brand } from "@/components/brand-mark";
@@ -18,11 +17,6 @@ import {
   waShop,
   waSouvenir,
 } from "@/lib/site";
-
-export const metadata: Metadata = {
-  description:
-    "Landing page Jefsiamore. Set cangkir keramik lucu dicat tangan, belanja di Shopee dan TikTok Shop, bisa juga borongan buat souvenir.",
-};
 
 export default function Home() {
   return (
@@ -633,16 +627,15 @@ function SiteFooter() {
       <div className="wrap py-14 md:py-16">
         <div className="grid gap-10 md:grid-cols-12">
           <div className="md:col-span-5">
-            <div className="flex items-center gap-2.5 text-lemon">
+            <div className="flex items-center">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={site.logo}
-                alt=""
-                width={36}
-                height={36}
-                className="h-9 w-9 rounded-full border-2 border-lemon object-cover"
+                alt={site.brand}
+                width={200}
+                height={110}
+                className="h-14 w-auto"
               />
-              <span className="display text-2xl">{site.brand}</span>
             </div>
             <p className="mt-4 max-w-xs text-[0.9rem] text-cream/70">
               {site.tagline} Dibikin di {site.city}, dikirim ke seluruh
@@ -730,7 +723,9 @@ function FaqJsonLd() {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(data).replace(/</g, "\\u003c"),
+      }}
     />
   );
 }

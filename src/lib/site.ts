@@ -12,9 +12,18 @@
 
 export const site = {
   brand: "Jefsiamore",
+  legalName: "Jefsiamore Store",
   domain: "jefsiamore.store",
+  url: "https://jefsiamore.store", // canonical, tanpa trailing slash
   tagline: "Cangkir keramik lucu, dicat tangan.",
   city: "Tangerang",
+  region: "Banten",
+  country: "ID",
+  locale: "id_ID",
+
+  // Dipakai untuk <meta description>, Open Graph, dan structured data.
+  description:
+    "Set cangkir dan lepek keramik lucu dicat tangan dari Jefsiamore. Enak buat ngopi tiap hari, cakep juga buat souvenir pernikahan, hampers, dan kado. Ready di Shopee, TikTok Shop, dan Lazada.",
 
   // --- GANTI KALAU BERUBAH ---
   shopeeUrl: "https://s.shopee.co.id/3B6wBxeBsu",
@@ -24,6 +33,9 @@ export const site = {
   waNumber: "6281296643788", // untuk link wa.me
   waDisplay: "0812-9664-3788", // yang tampil di layar
   logo: "/logo.png", // ganti dengan file logo asli kalau ada yang lebih bagus
+  ogImage: "/og.png", // gambar share (1200x630)
+  // Verifikasi kepemilikan di Google Search Console.
+  googleSiteVerification: "MvZ62zG_VIXH8aZFm6lKreeoZ6d1SFh0zvjkaXIByHs",
   // ---------------------------
 
   stats: {
@@ -33,6 +45,14 @@ export const site = {
   },
   marketplaces: ["Shopee", "TikTok Shop", "Lazada"] as const,
 } as const;
+
+/** Profil resmi toko di luar situs — dipakai untuk `sameAs` di structured data. */
+export const socialProfiles: string[] = [
+  site.instagramUrl,
+  site.shopeeUrl,
+  site.tiktokUrl,
+  site.lazadaUrl,
+];
 
 export const waUrl = (msg: string) =>
   `https://wa.me/${site.waNumber}?text=${encodeURIComponent(msg)}`;
