@@ -50,7 +50,26 @@ function AnnouncementBar() {
   ];
   return (
     <div className="bg-ink text-cream">
-      <div className="wrap flex flex-wrap items-center justify-center gap-x-3 gap-y-1 py-2 text-center text-[0.75rem] font-medium">
+      {/* Mobile: marquee jalan terus, tidak stacking */}
+      <div className="flex overflow-hidden py-2 sm:hidden [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]">
+        <ul className="marquee-track flex shrink-0 items-center gap-3 pr-3 text-[0.75rem] font-medium">
+          {[...items, ...items].map((t, i) => (
+            <li
+              key={i}
+              aria-hidden={i >= items.length}
+              className="flex shrink-0 items-center gap-3 whitespace-nowrap"
+            >
+              <span>{t}</span>
+              <span aria-hidden="true" className="text-lemon">
+                ✳
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Desktop: baris rata tengah */}
+      <div className="wrap hidden items-center justify-center gap-x-3 gap-y-1 py-2 text-center text-[0.75rem] font-medium sm:flex sm:flex-wrap">
         {items.map((t, i) => (
           <span key={i} className="flex items-center gap-3">
             {i > 0 && (
@@ -73,7 +92,7 @@ function Hero() {
     <section className="relative overflow-hidden">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-24 -top-24 h-[26rem] w-[26rem] rounded-full bg-lemon md:right-[8%]"
+        className="pointer-events-none absolute -right-20 -top-28 h-56 w-56 rounded-full bg-lemon md:-top-24 md:right-[8%] md:h-[26rem] md:w-[26rem]"
       />
       <div className="wrap relative grid gap-12 py-14 md:grid-cols-[1.05fr_1fr] md:items-center md:gap-10 md:py-20">
         <div>
@@ -82,7 +101,7 @@ function Hero() {
             {site.domain} · dari {site.city}
           </span>
 
-          <h1 className="display mt-5 text-[clamp(2.7rem,8.5vw,5rem)] text-ink">
+          <h1 className="display mt-5 text-balance text-[clamp(2.6rem,7.5vw,4.75rem)] leading-[1.12] text-ink">
             Cangkir cantik buat{" "}
             <span className="box-decoration-clone bg-lemon px-2">teman ngopi</span>{" "}
             tiap hari.
